@@ -29,7 +29,7 @@ class Queue:
     def isFull(self):
         # rear가 front보다 한 칸 앞에 있으면
         # front가 rear보다 한 칸 뒤에 있으면
-        if self.front == self.rear + 1:
+        if self.front == (self.rear + 1) % 5:
             return True
         else:
             return False
@@ -38,7 +38,7 @@ class Queue:
         # item을 rear 자리에 넣어주는 역할
         # rear가 한 칸 전진
         self.queueList[self.rear] = item
-        self.rear += 1
+        self.rear += (self.rear + 1) % 5
 
 
 
@@ -47,6 +47,6 @@ class Queue:
         # front 한 칸 전진
         self.queueList[self.front] = [None]     # python에서만 성립. 다른 언어에서는 변수 안에 값을 제거하는것 자체가 없기 때문에,
                                                 # 자료구조를 표현(= 값이 제거됐다 etc..) 자료구조의 범위(front~ rear-1)
-        self.front += 1
+        self.front += (self.front + 1) % 5
 
 
