@@ -35,12 +35,14 @@ class Queue:
             return False
 
     def enqueue(self, item):
+        # isFull == False일 때 
         # item을 rear 자리에 넣어주는 역할
         # rear가 한 칸 전진
         self.queueList[self.rear] = item
         self.rear += (self.rear + 1) % self.size
 
     def dequeue(self):
+        # isEmpty == False일 때 
         # front 자리의 값을 제거
         # front 한 칸 전진
         self.queueList[self.front] = [None]     # python에서만 성립. 다른 언어에서는 변수 안에 값을 제거하는것 자체가 없기 때문에,
